@@ -4,14 +4,13 @@
   "description": "Generate a react component with CLI",
   "files": "index.js",
   "repository": "https://github.com/jonexiu/generate-react-component",
-  "author": "Ed Lee",
+  "author": "Ed Lee / Forked by David R",
   "license": "MIT",
   "bin": {
     "rcmp": "./index.js"
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "fs-extra": "^2.0.0",
-    "program": "^0.0.0-12"
+    "fs-extra": "^2.0.0"
   }
 }

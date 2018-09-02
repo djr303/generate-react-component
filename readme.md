@@ -12,33 +12,49 @@ Typically, there are two kinds of components: [Functional and Class Components](
 Functional Component:
 
 ```javascript
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import from './<ComponentName>.css'
 
-const Cmp = (props) => {
-  return (
-    <div className={s.cover} style={bgStyle} >
-    </div>
-  )
+const <ComponentName> = (props) => (
+    <div></div>
+);
+
+<ComponentName>.propTypes = {
+
 }
 
-export default Cmp
+<ComponentName>.defaultProps = {
+
+}
+
+export default <ComponentName>
 ```  
 
 Class Component:
 
 ```javascript
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import from './<ComponentName>.css'
 
-class Cmp extends Component {
-    componentDidMount() {
+class <ComponetName> extends Component {
+    constructor(props) {
+        super(props)
     }
+    
     render() {
-        return (
-        )
+      return (
+          <div></div>
+      )
     }
+  }
+
+<ComponentName>.defaultProps = {
+
 }
 
-export default Cmp  
+export default <CompoentName> 
 ```
 
 It should be a super easy tool to automatically generate these files, without manual new file creation or copy & paste. So, here you are.
@@ -48,7 +64,7 @@ It should be a super easy tool to automatically generate these files, without ma
 
 Run
 
-```npm install -g generate-react-component```
+```npm install -g generate-your-react-component```
 
 You may need to ```sudo``` it.
 
@@ -59,7 +75,7 @@ You may need to ```sudo``` it.
 
 Run
 
-```rcmp <ComponentName>```
+```rcmp -k[or --class] <ComponentName>```
 
 This will create a folder of your component name, and a **Class Component** js file with the same name.
 
@@ -82,13 +98,7 @@ This will create a folder of your component name, and **Pure Function Component*
 
 Run
 
-```rcmp <ComponentName> --pure --css```
-
-or
-
-```rcmp <ComponentName> -p -c```
-
-This will create a folder of your component name, and component (Functional if ```--pure```) js file of the same name, and a css file of the same name.
+```rcmp <ComponentName> --pure/--class -c/--css```
 
 <br>
 That's it!
