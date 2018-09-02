@@ -1,13 +1,13 @@
 {
-  "name": "generate-react-component",
-  "version": "0.1.6",
+  "name": "generate-your-react-component",
+  "version": "0.0.1",
   "description": "Generate a react component with CLI",
   "files": "index.js",
-  "repository": "https://github.com/jonexiu/generate-react-component",
+  "repository": "https://github.com/djr303/generate-your-react-component",
   "author": "Ed Lee / Forked by David R",
   "license": "MIT",
   "bin": {
-    "rcmp": "./index.js"
+    "grc": "./index.js"
   },
   "dependencies": {
     "commander": "^2.9.0",
