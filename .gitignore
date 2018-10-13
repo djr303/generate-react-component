@@ -39,3 +39,6 @@ jspm_packages
 
 # Temp
 dev/client/temp
+
+# development folder
+development
