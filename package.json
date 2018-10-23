@@ -1,5 +1,5 @@
 {
-  "name": "generate-your-react-component",
+  "name": "grc",
   "version": "0.0.2",
   "description": "Generate a react component with CLI",
   "files": "index.js",

@@ -5,24 +5,26 @@ var path = require('path');
 var fs = require('fs-extra');
 var componentTemplates = require('./componentTemplates/index.js');
 
+var componentDir;
 var componentName;
 
 var program = require('commander')
   .version(require('./package.json').version)
-  .arguments('<component-directory>')
-  .action(function (name) {
-    componentName = name;
+  .arguments('<component-directory> <component-name>')
+  .action(function (cDir, cName) {
+    componentDir = cDir;
+    componentName = cName;
   })
   .option('-p, --pure', 'Create Pure Function Component')
   .option('-k --class', 'Create Class Component')
-  .option('-c, --css', `Add ${componentName}.css`)
+  .option('-c, --css', `Add <componentN-name>.css`)
   .option('-i, --index', 'Create index.js file for all components in supplied directory')
   .parse(process.argv)
  
-createComponent(componentName);
+createComponent(componentDir, componentName);
 
-function createComponent(name) {
-  var root = path.resolve(name);
+function createComponent(dir, name) {
+  var root = path.resolve(dir);
 
   if (!fs.existsSync(root)) {
     fs.mkdirSync(root);
