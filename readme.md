@@ -1,32 +1,26 @@
 # generate-react-component
 
 An opinionated CLI generator for ReactJS components.
-<br>
 
 ## Why?
 
-As a ReactJS developer, from time to time, I have to create components of same structure, by manual copy & paste. It is a time consuming no-brainer process that any React dev may repeat everyday. 
-
-Typically, there are two kinds of components: [Functional and Class Components](https://facebook.github.io/react/docs/components-and-props.html#functional-and-class-components), the basic structure of either could always look the same, in one project:
+ReactJS is full of repetitive patterns this simple tool which can be extended quite easily
+allows you generate code based on templates. Currently the templates available are Class, Functional
+and Index files
 
 Functional Component:
 
 ```javascript
 import React from 'react';
 import PropTypes from 'prop-types';
-import from './<ComponentName>.css'
 
-const <ComponentName> = (props) => (
-    <div></div>
-);
+const <ComponentName> = props => <div></div>;
 
-<ComponentName>.propTypes = {
+<ComponentName>.displayName = '<ComponentName>'
 
-}
+<ComponentName>.propTypes = {}
 
-<ComponentName>.defaultProps = {
-
-}
+<ComponentName>.defaultProps = {}
 
 export default <ComponentName>
 ```  
@@ -39,6 +33,11 @@ import PropTypes from 'prop-types';
 import from './<ComponentName>.css'
 
 class <ComponetName> extends Component {
+
+    static propTypes = {};
+    static defaultProps = {};
+    static displayName = '<ComponentName>'
+
     constructor(props) {
         super(props)
     }
@@ -50,15 +49,10 @@ class <ComponetName> extends Component {
     }
   }
 
-<ComponentName>.defaultProps = {
-
-}
-
-export default <CompoentName> 
+export default <ComponentName>
 ```
 
-It should be a super easy tool to automatically generate these files, without manual new file creation or copy & paste. So, here you are.
-<br>
+
 
 ## Install
 
@@ -68,44 +62,31 @@ Run
 
 You may need to ```sudo``` it.
 
-<br>
 ## Usage
 
 ### Generate Class Component
 
 Run
 
-```rcmp -k[or --class] <ComponentName>```
+```grc -k[or --class] <ComponentDirectory> <ComponentName>```
 
-This will create a folder of your component name, and a **Class Component** js file with the same name.
+This will create a folder within the current folder named <ComponentDirectory>,
+and a **Class Component** js file named <ComponentName>.
 
 <br>
 
-### Generate Pure Function Component
+### Generate Functional component
 
 Run
 
-```rcmp <ComponentName> --pure```
+```grc -f[or --functional] <ComponentDirectory> <ComponentName>```
 
-or
+### Generate index.js file in directory for all React components
 
-```rcmp <ComponentName> -p```
+```grc -i[or --index] <ComponentDirectory>
 
-This will create a folder of your component name, and **Pure Function Component** js file of the same name.
 
-<br>
-### Generate Component (Class or Pure) with a CSS file
-
-Run
-
-```rcmp <ComponentName> --pure/--class -c/--css```
-
-<br>
-That's it!
-
-Enjoy and feel free to share your suggestion!
-
-###TODO
+###TODOs
 
 - [ ] Add ```yarn add global```support
 - [ ] Add Chalk fancy colors
