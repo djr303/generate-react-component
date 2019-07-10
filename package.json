@@ -1,5 +1,5 @@
 {
-  "name": "grc",
+  "name": "generate-your-react-component",
   "version": "0.3.0",
   "description": "Generate a react component with CLI",
   "files": "index.js",
@@ -10,7 +10,6 @@
     "grc": "./index.js"
   },
   "dependencies": {
-    "colors": "^1.3.3",
     "commander": "^2.9.0",
     "fs-extra": "^2.0.0"
   }
