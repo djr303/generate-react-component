@@ -30,7 +30,6 @@ Class Component:
 ```javascript
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import from './<ComponentName>.css'
 
 class <ComponetName> extends Component {
 
@@ -85,8 +84,3 @@ Run
 
 ```grc -i[or --index] <ComponentDirectory>
 
-
-###TODOs
-
-- [ ] Add ```yarn add global```support
-- [ ] Add Chalk fancy colors

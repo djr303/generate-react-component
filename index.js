@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
+const colors = require('colors');
 const path = require('path');
 const fs = require('fs-extra');
 const componentTemplates = require('./componentTemplates/index.js');
@@ -53,11 +54,11 @@ const createComponent = (dir, name) => {
     const fileToWrite = path.join(root, `${name}.js`);
     checkExistsAndWriteFile(fileToWrite, template);
   } else {
-    console.error('Big problems boss, try again :(');
+    console.error('Big problems boss, try again :('.red);
     process.exit(2);
   }
 
-  console.log(`Component '${name}' created`);
+  console.log(`Component '${name}' created`.green);
   process.exit(0);
 }
 
@@ -65,7 +66,7 @@ const createComponent = (dir, name) => {
 const checkExistsAndWriteFile = (fileToWrite, template) => {
   if (fs.existsSync(fileToWrite)) {
     console.error(
-      "This file in this location already exists, I'm not going to do anything stupid..",
+      "This file in this location already exists, I'm not going to do anything stupid..".red
     );
     process.exit(2);
   } else {
